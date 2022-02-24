@@ -6,10 +6,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="208.0" prefWidth="334.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField fx:id="TXT_ID" layoutX="42.0" layoutY="67.0" promptText="Número de dédula">
+      <TextField fx:id="TXT_ID" layoutX="41.0" layoutY="104.0" promptText="Número de dédula">
          <font>
             <Font name="Arial" size="20.0" />
          </font>
@@ -19,10 +18,15 @@
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="BTTN_REGISTER" layoutX="118.0" layoutY="147.0" mnemonicParsing="false" onAction="#registerUser" style="-fx-background-color: #E2E0E0;" text="Registrar">
+      <Button fx:id="BTTN_REGISTER" layoutX="118.0" layoutY="154.0" mnemonicParsing="false" onAction="#registerUser" style="-fx-background-color: #E2E0E0;" text="Registrar">
          <font>
             <Font name="Arial Italic" size="18.0" />
          </font>
       </Button>
+      <TextField fx:id="TXT_NAME" layoutX="41.0" layoutY="59.0" promptText="Nombre">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </TextField>
    </children>
 </Pane>

@@ -10,7 +10,6 @@ public class Function {
 	private int room;
 	
 	public Function(Date date, String filmName, double filmDuration, int room) {
-		super();
 		this.date = date;
 		this.filmName = filmName;
 		this.filmDuration = filmDuration;
