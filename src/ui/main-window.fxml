@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefHeight="20.0" prefWidth="600.0" style="-fx-background-color: white;">
+         <children>
+            <MenuBar prefHeight="25.0" prefWidth="266.0" style="-fx-background-color: white;">
+              <menus>
+                <Menu mnemonicParsing="false" text="Función">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#createFunction" text="Crear función" />
+                        <MenuItem mnemonicParsing="false" onAction="#removeFunction" text="Eliminar función" />
+                        <MenuItem mnemonicParsing="false" onAction="#seeFunctions" text="Ver funciones" />
+                        <MenuItem mnemonicParsing="false" onAction="#seeHistorialFunctions" text="Ver historial de funciones" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Espectador">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#addViewer" text="Agregar espectador" />
+                        <MenuItem mnemonicParsing="false" onAction="#removeViewer" text="Eliminar espectador" />
+                        <MenuItem mnemonicParsing="false" onAction="#seeViewers" text="Ver espectadores" />
+                        <MenuItem mnemonicParsing="false" onAction="#seeHistorialViewers" text="Ver historial de espectadores" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Usuario">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#addUser" text="Agregar usuario" />
+                        <MenuItem mnemonicParsing="false" onAction="#removeUser" text="Eliminar usuarios" />
+                        <MenuItem mnemonicParsing="false" onAction="#seeUsers" text="Ver usuarios" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Sesión">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#changeUser" text="Cambiar de usuario" />
+                        <MenuItem mnemonicParsing="false" onAction="#logout" text="Cerrar sesión" />
+                    </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </HBox>
+      <Pane fx:id="MAIN_PANE" prefHeight="376.0" prefWidth="600.0" style="-fx-background-color: white;" />
+   </children>
+</VBox>
