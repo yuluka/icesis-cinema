@@ -3,6 +3,7 @@ package control;
 import java.io.IOException;
 
 import exceptions.AlreadyExistingUserException;
+import exceptions.NoInfoRegisterUserException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +13,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import model.CinemaData;
@@ -19,6 +21,9 @@ import model.CinemaData;
 public class Register {
 	@FXML
     private Button BTTN_REGISTER;
+	
+   @FXML
+   private ImageView BTTN_BACK;
 
     @FXML
     private TextField TXT_ID;
@@ -54,6 +59,16 @@ public class Register {
 			
 			TXT_ID.clear();
         	TXT_NAME.clear();
+		} catch (NoInfoRegisterUserException e) {
+			alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Error de información de usuario");
+			alert.setHeaderText("¡Alguna información no ha sido llenada!");
+			alert.setContentText("No has escrito bien alguno, o ambos, de los datos necesarios para crear"
+					+ " un usuario. Intenta nuevamente.");
+			alert.show();
+			
+			TXT_ID.clear();
+        	TXT_NAME.clear();
 		}
     }
     
@@ -85,4 +100,12 @@ public class Register {
 		Stage aux = (Stage) BTTN_REGISTER.getScene().getWindow();
 		aux.close();
     }
+    
+  /** Buscar como usar el tooltip.
+   public void test() {
+	   if(BTTN_BACK.getOnMouseMoved() != null) {
+		   Tooltip t = new Tooltip("Atrás");
+		   Tooltip.install(BTTN_BACK, t);
+	   }
+    }*/
 }

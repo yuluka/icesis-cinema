@@ -2,6 +2,7 @@ package control;
 
 import java.io.IOException;
 
+import exceptions.NoInfoLoginUserException;
 import exceptions.NonExistingUserException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -62,6 +63,15 @@ public class Login {
 			alert.setTitle("Error de usuario existente");
 			alert.setHeaderText("¡Este usuario no existe!");
 			alert.setContentText("El usuario con el que estás intentando ingresar no existe. Intenta"
+					+ " nuevamente.");
+			alert.show();
+			
+			TXT_ID.clear();
+		} catch (NoInfoLoginUserException e) {
+			alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Error de información de usuario");
+			alert.setHeaderText("¡No ha llenado la información del usuario!");
+			alert.setContentText("Estás intetando ingresar con un usuario sin información. Intenta"
 					+ " nuevamente.");
 			alert.show();
 			

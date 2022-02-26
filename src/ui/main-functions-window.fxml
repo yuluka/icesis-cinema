@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="412.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="BTTN_ADD_FUNCTION" accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="31.0" onMouseClicked="#createFunction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/add%20function%20icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="BTTN_ADD_VIEWER" accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" layoutX="225.0" layoutY="31.0" onMouseClicked="#addViewer" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/add%20spectator%20icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="BTTN_ADD_USER" accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" layoutX="436.0" layoutY="31.0" onMouseClicked="#addUser" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/user%20settings%20icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="BTTN_SEE_FUNCTIONS" accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" layoutX="119.0" layoutY="223.0" onMouseClicked="#seeFunctions" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/scheduled%20functions%20icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="BTTN_SEE_VIEWER" accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" layoutX="330.0" layoutY="223.0" onMouseClicked="#seeViewers" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/added%20spectators%20icon.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="33.0" layoutY="200.0" text="Agregar función" textFill="#948c8c">
+         <font>
+            <Font name="Arial Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="216.0" layoutY="200.0" text="Agregar espectador(es)" textFill="#948c8c">
+         <font>
+            <Font name="Arial Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="445.0" layoutY="200.0" text="Agregar usuario(s)" textFill="#948c8c">
+         <font>
+            <Font name="Arial Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="103.0" layoutY="378.0" text="Ver funciones agendadas" textFill="#948c8c">
+         <font>
+            <Font name="Arial Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="300.0" layoutY="378.0" text="Ver espectadores agendados" textFill="#948c8c">
+         <font>
+            <Font name="Arial Italic" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
