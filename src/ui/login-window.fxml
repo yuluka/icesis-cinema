@@ -8,7 +8,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="208.0" prefWidth="334.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField fx:id="TXT_ID" layoutX="42.0" layoutY="67.0" promptText="Número de dédula">
+      <TextField fx:id="TXT_ID" layoutX="42.0" layoutY="67.0" promptText="Número de cédula">
          <font>
             <Font name="Arial" size="20.0" />
          </font>

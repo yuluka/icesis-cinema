@@ -2,6 +2,9 @@ package model;
 
 import java.util.ArrayList;
 
+import exceptions.AlreadyExistingUserException;
+import exceptions.NonExistingUserException;
+
 public class CinemaData {
 	public static ArrayList<User> users = new ArrayList<User>();//Arraylist para guardar todos los users creados.
 
@@ -13,7 +16,7 @@ public class CinemaData {
 	está vacío. En caso de que sí, agrega el user sin más. En caso de que no, revisa si existe un 
 	user con el mismo id del que se está intentando crear y lo agrega, si no lo encuentra, o lanza 
 	una excepción, si no lo encuentra*/
-	public void registerUser(String name, String id) {
+	public void registerUser(String name, String id) throws AlreadyExistingUserException{
 		User newUser = new User(name, id);
 		
 		if(users.size() != 0) {
@@ -21,8 +24,7 @@ public class CinemaData {
 				if(!users.get(i).getUserID().equalsIgnoreCase(id)) {
 					users.add(newUser);
 				}else {
-					/**Diseñar y lanzar una excepción en caso de que se trate de registrar un user
-					ya registrado*/
+					throw new AlreadyExistingUserException(id);
 				}
 			}
 		}else {
@@ -32,7 +34,7 @@ public class CinemaData {
 	
 	/** Busca si hay algún user con el id ingresado y devuelve un boolean para decir si lo hizo 
 	o no.*/
-	public boolean searchUser(String id) {
+	public boolean searchUser(String id) throws NonExistingUserException{
 		boolean found = false;
 		
 		if(users.size() != 0) { //Búsqueda lineal.
@@ -41,6 +43,10 @@ public class CinemaData {
 					found = true;
 				}
 			}
+		}
+		
+		if(!found) {
+			throw new NonExistingUserException(id);
 		}
 		
 		return found;

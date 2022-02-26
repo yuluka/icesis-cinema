@@ -2,13 +2,16 @@ package control;
 
 import java.io.IOException;
 
+import exceptions.NonExistingUserException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import model.CinemaData;
 
@@ -21,6 +24,8 @@ public class Login {
 
     @FXML
     private TextField TXT_ID;
+    
+    private Alert alert;
     
     private CinemaData cinema = new CinemaData();
 
@@ -47,11 +52,21 @@ public class Login {
     void login(ActionEvent event) throws IOException {
     	String id = TXT_ID.getText();
     	
-    	if(cinema.searchUser(id)) {
-    		goToMainWindow();
-    	}else {
-    		//Diseñar y lanzar una excepción en caso de que el id del user ingresado no exista.
-    	}
+    	try {
+			if(cinema.searchUser(id)) {
+				goToMainWindow();
+				TXT_ID.clear();
+			}
+		} catch (NonExistingUserException e) {
+			alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Error de usuario existente");
+			alert.setHeaderText("¡Este usuario no existe!");
+			alert.setContentText("El usuario con el que estás intentando ingresar no existe. Intenta"
+					+ " nuevamente.");
+			alert.show();
+			
+			TXT_ID.clear();
+		}
     }
     
     public void goToMainWindow() throws IOException {
