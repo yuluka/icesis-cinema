@@ -12,6 +12,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import model.CinemaData;
@@ -25,6 +27,9 @@ public class Login {
 
     @FXML
     private TextField TXT_ID;
+    
+    @FXML
+    private ImageView BTTN_BACK;
     
     private Alert alert;
     
@@ -92,4 +97,9 @@ public class Login {
 		Stage aux = (Stage) BTTN_LOGIN.getScene().getWindow();
 		aux.close();
 	}
+    
+    @FXML
+    void back(MouseEvent event) throws IOException {
+    	goToMainWindow();
+    }
 }

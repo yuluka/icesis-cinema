@@ -9,8 +9,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 public class MainWindow implements Initializable{
     @FXML
@@ -26,27 +27,55 @@ public class MainWindow implements Initializable{
 
 	@FXML
     void addUser(ActionEvent event) {
-
+		//FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/"));
     }
 
     @FXML
-    void addViewer(ActionEvent event) {
-
-    }
-
-    @FXML
-    void changeUser(ActionEvent event) {
-
-    }
-
-    @FXML
-    void createFunction(ActionEvent event) {
+    void addViewer(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/addViewer-window.fxml"));
+    	loader.setController(new AddViewer());
+    	Parent root = (Parent) loader.load();
     	
+    	MAIN_PANE.getChildren().setAll(root);
     }
 
     @FXML
-    void logout(ActionEvent event) {
+    void changeUser(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/changeUser-window.fxml"));
+    	loader.setController(new Login());
+    	Parent root = loader.load();
+    	
+    	Scene sc = new Scene(root);
+    	Stage stage = new Stage();
+    	stage.setScene(sc);
+    	stage.show();
+    	
+    	Stage aux = (Stage) MAIN_PANE.getScene().getWindow();
+    	aux.close();
+    }
 
+    @FXML
+    void createFunction(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/addFunction-window.fxml"));
+    	loader.setController(new AddFunction());
+    	Parent root = (Parent) loader.load();
+    	
+    	MAIN_PANE.getChildren().setAll(root);
+    }
+
+    @FXML
+    void logout(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/login-window.fxml"));
+    	loader.setController(new Login());
+    	Parent root = loader.load();
+    	
+    	Scene sc = new Scene(root);
+    	Stage stage = new Stage();
+    	stage.setScene(sc);
+    	stage.show();
+    	
+    	Stage aux = (Stage) MAIN_PANE.getScene().getWindow();
+    	aux.close();
     }
 
     @FXML
@@ -65,8 +94,12 @@ public class MainWindow implements Initializable{
     }
 
     @FXML
-    void seeFunctions(ActionEvent event) {
-
+    void seeFunctions(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/functionList-window.fxml"));
+    	loader.setController(new FunctionList());
+    	Parent root = loader.load();
+    	
+    	MAIN_PANE.getChildren().setAll(root);
     }
 
     @FXML
@@ -85,8 +118,12 @@ public class MainWindow implements Initializable{
     }
 
     @FXML
-    void seeViewers(ActionEvent event) {
-
+    void seeViewers(ActionEvent event) throws IOException{
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/viewersList-window.fxml"));
+    	loader.setController(new ViewerList());
+    	Parent root = loader.load();
+    	
+    	MAIN_PANE.getChildren().setAll(root);
     }
 
 	@Override
@@ -98,10 +135,7 @@ public class MainWindow implements Initializable{
 			root = loader.load();
 			MAIN_PANE.getChildren().setAll(root);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
 	}
 }

@@ -9,7 +9,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox prefHeight="20.0" prefWidth="600.0" style="-fx-background-color: white;">
+      <HBox style="-fx-background-color: white;">
          <children>
             <MenuBar prefHeight="26.0" prefWidth="637.0" style="-fx-background-color: white;">
               <menus>
