@@ -11,7 +11,7 @@
    <children>
       <HBox prefHeight="20.0" prefWidth="600.0" style="-fx-background-color: white;">
          <children>
-            <MenuBar prefHeight="25.0" prefWidth="266.0" style="-fx-background-color: white;">
+            <MenuBar prefHeight="26.0" prefWidth="637.0" style="-fx-background-color: white;">
               <menus>
                 <Menu mnemonicParsing="false" text="Función">
                   <items>

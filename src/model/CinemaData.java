@@ -30,6 +30,7 @@ public class CinemaData {
 				for (int i = 0; i < users.size(); i++) {
 					if(!users.get(i).getUserID().equalsIgnoreCase(id)) {
 						users.add(newUser);
+						i = users.size();
 					}else {
 						throw new AlreadyExistingUserException(id);
 					}
