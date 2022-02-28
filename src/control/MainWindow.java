@@ -15,20 +15,22 @@ import javafx.stage.Stage;
 
 public class MainWindow implements Initializable{
     @FXML
-    private Pane MAIN_PANE;
+    public Pane MAIN_PANE;
     
-    public void chargeThings() throws IOException {
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/main-functions-window.fxml"));
-		loader.setController(new MainFunctionsWindow());
+	@FXML
+    void addUser(ActionEvent event) throws IOException {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/register-window.fxml"));
+		loader.setController(new Register());
 		Parent root = loader.load();
 		
-		MAIN_PANE.getChildren().setAll(root);
-    }
-
-	@FXML
-    void addUser(ActionEvent event) {
-		//FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/"));
-    }
+		Scene sc = new Scene(root);
+		Stage st = new Stage();
+		st.setScene(sc);
+		st.show();
+		
+		Stage aux = (Stage) MAIN_PANE.getScene().getWindow();
+		aux.close();
+	}
 
     @FXML
     void addViewer(ActionEvent event) throws IOException {
@@ -36,9 +38,10 @@ public class MainWindow implements Initializable{
     	loader.setController(new AddViewer());
     	Parent root = (Parent) loader.load();
     	
+    	MAIN_PANE.getScene().getWindow().sizeToScene();
     	MAIN_PANE.getChildren().setAll(root);
     }
-
+    
     @FXML
     void changeUser(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/changeUser-window.fxml"));
@@ -60,9 +63,10 @@ public class MainWindow implements Initializable{
     	loader.setController(new AddFunction());
     	Parent root = (Parent) loader.load();
     	
+    	MAIN_PANE.getScene().getWindow().sizeToScene();
     	MAIN_PANE.getChildren().setAll(root);
     }
-
+    
     @FXML
     void logout(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/login-window.fxml"));
@@ -79,29 +83,15 @@ public class MainWindow implements Initializable{
     }
 
     @FXML
-    void removeFunction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void removeUser(ActionEvent event) {
-
-    }
-
-    @FXML
-    void removeViewer(ActionEvent event) {
-
-    }
-
-    @FXML
     void seeFunctions(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/functionList-window.fxml"));
     	loader.setController(new FunctionList());
     	Parent root = loader.load();
     	
+    	MAIN_PANE.getScene().getWindow().sizeToScene();
     	MAIN_PANE.getChildren().setAll(root);
     }
-
+   
     @FXML
     void seeHistorialFunctions(ActionEvent event) {
 
@@ -123,9 +113,10 @@ public class MainWindow implements Initializable{
     	loader.setController(new ViewerList());
     	Parent root = loader.load();
     	
+    	MAIN_PANE.getScene().getWindow().sizeToScene();
     	MAIN_PANE.getChildren().setAll(root);
     }
-
+    
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		try {

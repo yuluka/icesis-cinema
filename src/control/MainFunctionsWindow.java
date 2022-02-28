@@ -1,9 +1,16 @@
 package control;
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 public class MainFunctionsWindow {
 	@FXML
@@ -20,30 +27,63 @@ public class MainFunctionsWindow {
 
     @FXML
     private ImageView BTTN_SEE_VIEWER;
-
+    
     @FXML
-    void addUser(MouseEvent event) {
-
+    private Pane MAIN_FUNCTIONS_PANE;
+    
+    @FXML
+    void addUser(MouseEvent event) throws IOException{
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/register-window.fxml"));
+    	loader.setController(new Register());
+    	Parent root = loader.load();
+    	
+    	Scene sc = new Scene(root);
+    	Stage stage = new Stage();
+    	stage.setScene(sc);
+    	stage.show();
+    	
+    	Stage aux = (Stage) BTTN_ADD_USER.getScene().getWindow();
+    	aux.close();
     }
 
     @FXML
-    void addViewer(MouseEvent event) {
-
+    void addViewer(MouseEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/addViewer-window.fxml"));
+    	loader.setController(new AddViewer());
+    	Parent root = (Parent) loader.load();
+    	
+    	MAIN_FUNCTIONS_PANE.getScene().getWindow().sizeToScene();
+    	MAIN_FUNCTIONS_PANE.getChildren().setAll(root);
     }
 
     @FXML
-    void createFunction(MouseEvent event) {
-
+    void createFunction(MouseEvent event) throws IOException{
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/addFunction-window.fxml"));
+    	loader.setController(new AddFunction());
+    	Parent root = (Parent) loader.load();
+    	
+    	MAIN_FUNCTIONS_PANE.getScene().getWindow().sizeToScene();
+    	MAIN_FUNCTIONS_PANE.getChildren().setAll(root);
     }
 
     @FXML
-    void seeFunctions(MouseEvent event) {
-
+    void seeFunctions(MouseEvent event) throws IOException{
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/functionList-window.fxml"));
+    	loader.setController(new FunctionList());
+    	Parent root = (Parent) loader.load();
+    	
+    	MAIN_FUNCTIONS_PANE.getScene().getWindow().sizeToScene();
+    	MAIN_FUNCTIONS_PANE.getChildren().setAll(root);	
     }
 
     @FXML
-    void seeViewers(MouseEvent event) {
-
+    void seeViewers(MouseEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/viewersList-window.fxml"));
+    	loader.setController(new ViewerList());
+    	Parent root = (Parent) loader.load();
+    	
+    	MAIN_FUNCTIONS_PANE.getScene().getWindow().sizeToScene();
+    	MAIN_FUNCTIONS_PANE.getChildren().setAll(root);
     }
     
     @FXML
@@ -54,13 +94,13 @@ public class MainFunctionsWindow {
     
     @FXML
     void showTooltipFunctionHistorial(MouseEvent event) {
-    	Tooltip t = new Tooltip("Ver el historial de funciones");
+    	Tooltip t = new Tooltip("Ver funciones agendadas");
     	Tooltip.install(BTTN_SEE_FUNCTIONS, t);
     }
 
     @FXML
     void showTooltipUser(MouseEvent event) {
-    	Tooltip t = new Tooltip("Opciones de usuario");
+    	Tooltip t = new Tooltip("Agregar usuario");
     	Tooltip.install(BTTN_ADD_USER, t);
     }
 
@@ -72,7 +112,7 @@ public class MainFunctionsWindow {
 
     @FXML
     void showTooltipViewersHistorial(MouseEvent event) {
-    	Tooltip t = new Tooltip("Ver el historial de espectadores");
+    	Tooltip t = new Tooltip("Ver espectadores registrados");
     	Tooltip.install(BTTN_SEE_VIEWER, t);
     }
 }

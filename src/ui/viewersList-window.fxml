@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="718.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="MAIN_PANE" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="718.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TableView fx:id="TV_VIEWERS" layoutX="57.0" layoutY="32.0" prefHeight="400.0" prefWidth="540.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="178.0" AnchorPane.topAnchor="0.0">
+      <TableView fx:id="TV_VIEWERS" layoutX="57.0" layoutY="44.0" prefHeight="356.0" prefWidth="540.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="178.0" AnchorPane.topAnchor="44.0">
         <columns>
           <TableColumn fx:id="TVCOLUMN_NAME" prefWidth="75.0" text="Nombre" />
           <TableColumn fx:id="TVCOLUMN_ID" prefWidth="75.0" text="Cédula" />
@@ -19,7 +19,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Button fx:id="BTTN_DELETE" layoutX="569.0" layoutY="224.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="119.0" text="Eliminar">
+      <Button fx:id="BTTN_DELETE" layoutX="575.0" layoutY="187.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="119.0" text="Eliminar">
          <font>
             <Font name="Arial Italic" size="20.0" />
          </font>
@@ -27,6 +27,11 @@
       <ImageView fitHeight="118.0" fitWidth="141.0" layoutX="564.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../Desktop/FADUK/UNIVERSIDAD/Semestre%205/APO%202/images/icesi%20cinema%20zoom.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="BTTN_BACK" accessibleRole="BUTTON" fitHeight="56.0" fitWidth="48.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/back%20icon.png" />
          </image>
       </ImageView>
    </children>

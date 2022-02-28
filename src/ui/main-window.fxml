@@ -16,7 +16,6 @@
                 <Menu mnemonicParsing="false" text="Función">
                   <items>
                     <MenuItem mnemonicParsing="false" onAction="#createFunction" text="Crear función" />
-                        <MenuItem mnemonicParsing="false" onAction="#removeFunction" text="Eliminar función" />
                         <MenuItem mnemonicParsing="false" onAction="#seeFunctions" text="Ver funciones" />
                         <MenuItem mnemonicParsing="false" onAction="#seeHistorialFunctions" text="Ver historial de funciones" />
                   </items>
@@ -24,7 +23,6 @@
                 <Menu mnemonicParsing="false" text="Espectador">
                   <items>
                     <MenuItem mnemonicParsing="false" onAction="#addViewer" text="Agregar espectador" />
-                        <MenuItem mnemonicParsing="false" onAction="#removeViewer" text="Eliminar espectador" />
                         <MenuItem mnemonicParsing="false" onAction="#seeViewers" text="Ver espectadores" />
                         <MenuItem mnemonicParsing="false" onAction="#seeHistorialViewers" text="Ver historial de espectadores" />
                   </items>
@@ -32,7 +30,6 @@
                 <Menu mnemonicParsing="false" text="Usuario">
                   <items>
                     <MenuItem mnemonicParsing="false" onAction="#addUser" text="Agregar usuario" />
-                        <MenuItem mnemonicParsing="false" onAction="#removeUser" text="Eliminar usuarios" />
                         <MenuItem mnemonicParsing="false" onAction="#seeUsers" text="Ver usuarios" />
                   </items>
                 </Menu>
