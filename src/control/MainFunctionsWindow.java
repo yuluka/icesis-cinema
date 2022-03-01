@@ -52,8 +52,9 @@ public class MainFunctionsWindow {
     	loader.setController(new AddViewer());
     	Parent root = (Parent) loader.load();
     	
-    	MAIN_FUNCTIONS_PANE.getScene().getWindow().sizeToScene();
     	MAIN_FUNCTIONS_PANE.getChildren().setAll(root);
+    	//MAIN_FUNCTIONS_PANE.setPrefSize(600, 400);
+    	MAIN_FUNCTIONS_PANE.getScene().getWindow().sizeToScene();
     }
 
     @FXML
@@ -62,8 +63,9 @@ public class MainFunctionsWindow {
     	loader.setController(new AddFunction());
     	Parent root = (Parent) loader.load();
     	
-    	MAIN_FUNCTIONS_PANE.getScene().getWindow().sizeToScene();
     	MAIN_FUNCTIONS_PANE.getChildren().setAll(root);
+    	//MAIN_FUNCTIONS_PANE.setPrefSize(600, 400);
+    	MAIN_FUNCTIONS_PANE.getScene().getWindow().sizeToScene();
     }
 
     @FXML
@@ -72,8 +74,11 @@ public class MainFunctionsWindow {
     	loader.setController(new FunctionList());
     	Parent root = (Parent) loader.load();
     	
-    	MAIN_FUNCTIONS_PANE.getScene().getWindow().sizeToScene();
+    	//MAIN_FUNCTIONS_PANE.getScene().getWindow().setWidth(926);
+    	//MAIN_FUNCTIONS_PANE.getScene().getWindow().setHeight(439);
     	MAIN_FUNCTIONS_PANE.getChildren().setAll(root);	
+    	//MAIN_FUNCTIONS_PANE.setPrefSize(926, 439);
+    	MAIN_FUNCTIONS_PANE.getScene().getWindow().sizeToScene();
     }
 
     @FXML
@@ -82,8 +87,11 @@ public class MainFunctionsWindow {
     	loader.setController(new ViewerList());
     	Parent root = (Parent) loader.load();
     	
-    	MAIN_FUNCTIONS_PANE.getScene().getWindow().sizeToScene();
+    	//MAIN_FUNCTIONS_PANE.getScene().getWindow().setWidth(718);
+    	//MAIN_FUNCTIONS_PANE.getScene().getWindow().setHeight(400);
     	MAIN_FUNCTIONS_PANE.getChildren().setAll(root);
+    	//MAIN_FUNCTIONS_PANE.setPrefSize(718, 400);
+    	MAIN_FUNCTIONS_PANE.getScene().getWindow().sizeToScene();
     }
     
     @FXML

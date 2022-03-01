@@ -46,7 +46,8 @@ public class FunctionList {
     	loader.setController(new MainFunctionsWindow());
     	Parent root = loader.load();
     	
-    	MAIN_PANE.getScene().getWindow().sizeToScene();
     	MAIN_PANE.getChildren().setAll(root);
+    	MAIN_PANE.setPrefSize(600, 400);
+    	MAIN_PANE.getScene().getWindow().sizeToScene();
     }
 }

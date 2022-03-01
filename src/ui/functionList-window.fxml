@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="MAIN_PANE" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="926.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="MAIN_PANE" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TableView fx:id="TV_FUNCTIONS" layoutY="45.0" prefHeight="388.0" prefWidth="762.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="164.0" AnchorPane.topAnchor="45.0">
         <columns>
@@ -21,12 +21,12 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Button fx:id="BTTN_EDIT" layoutX="792.0" layoutY="175.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="112.0" text="Editar">
+      <Button fx:id="BTTN_EDIT" layoutX="800.0" layoutY="175.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="112.0" text="Editar">
          <font>
             <Font name="Arial Italic" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="BTTN_DELETE" layoutX="792.0" layoutY="229.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="112.0" text="Eliminar">
+      <Button fx:id="BTTN_DELETE" layoutX="800.0" layoutY="229.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="112.0" text="Eliminar">
          <font>
             <Font name="Arial Italic" size="18.0" />
          </font>

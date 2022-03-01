@@ -1,10 +1,12 @@
 package model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Function {
 	
 	private Date date;
+	//Falta agregar la hora de la función y un textField para que el usuario la elija.
 	private String filmName;
 	private double filmDuration;
 	private int room;
@@ -18,6 +20,13 @@ public class Function {
 
 	public Date getDate() {
 		return date;
+	}
+	
+	public String getDateStr() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String dateStr = sdf.format(date);
+		
+		return dateStr;
 	}
 
 	public void setDate(Date date) {

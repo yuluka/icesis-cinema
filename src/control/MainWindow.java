@@ -38,8 +38,8 @@ public class MainWindow implements Initializable{
     	loader.setController(new AddViewer());
     	Parent root = (Parent) loader.load();
     	
-    	MAIN_PANE.getScene().getWindow().sizeToScene();
     	MAIN_PANE.getChildren().setAll(root);
+    	MAIN_PANE.getScene().getWindow().sizeToScene();
     }
     
     @FXML
@@ -63,8 +63,8 @@ public class MainWindow implements Initializable{
     	loader.setController(new AddFunction());
     	Parent root = (Parent) loader.load();
     	
-    	MAIN_PANE.getScene().getWindow().sizeToScene();
     	MAIN_PANE.getChildren().setAll(root);
+    	MAIN_PANE.getScene().getWindow().sizeToScene();
     }
     
     @FXML
@@ -88,8 +88,8 @@ public class MainWindow implements Initializable{
     	loader.setController(new FunctionList());
     	Parent root = loader.load();
     	
-    	MAIN_PANE.getScene().getWindow().sizeToScene();
     	MAIN_PANE.getChildren().setAll(root);
+    	MAIN_PANE.getScene().getWindow().sizeToScene();
     }
    
     @FXML
@@ -106,6 +106,24 @@ public class MainWindow implements Initializable{
     void seeUsers(ActionEvent event) {
 
     }
+    
+    @FXML
+    void seeMediumRoom(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/seatListMediumroom-window.fxml"));
+    	loader.setController(new SeeMediumroom());
+    	Parent root = loader.load();
+    	
+    	MAIN_PANE.getChildren().setAll(root);
+    }
+
+    @FXML
+    void seeSmallRoom(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/seatListMiniroom-window.fxml"));
+    	loader.setController(new SeeMiniroom());
+    	Parent root = loader.load();
+    	
+    	MAIN_PANE.getChildren().setAll(root);
+    }
 
     @FXML
     void seeViewers(ActionEvent event) throws IOException{
@@ -113,8 +131,8 @@ public class MainWindow implements Initializable{
     	loader.setController(new ViewerList());
     	Parent root = loader.load();
     	
-    	MAIN_PANE.getScene().getWindow().sizeToScene();
     	MAIN_PANE.getChildren().setAll(root);
+    	MAIN_PANE.getScene().getWindow().sizeToScene();
     }
     
 	@Override

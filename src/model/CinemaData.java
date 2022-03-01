@@ -1,15 +1,22 @@
 package model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import exceptions.AlreadyExistingUserException;
+import exceptions.ExistingFunctionException;
+import exceptions.NoInfoAddFunctionException;
 import exceptions.NoInfoLoginUserException;
 import exceptions.NoInfoRegisterUserException;
 import exceptions.NonExistingUserException;
+import exceptions.OccupiedRoomException;
 
 public class CinemaData {
 	public static ArrayList<User> users = new ArrayList<User>();//Arraylist para guardar todos los users creados.
-
+	public static ArrayList<Function> functions = new ArrayList<Function>();
+		
 	private User adminUser = new User("Admin", "123");//Usuario administrador.
 	
 	public CinemaData() {
@@ -59,6 +66,52 @@ public class CinemaData {
 			
 			if(!found) {
 				throw new NonExistingUserException(id);
+			}
+		}
+		
+		return found;
+	}
+	
+	public void addFunction(String dateStr, String filmName, double filmDuration, int room) throws ParseException {
+		Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateStr);
+		Function newFunction = new Function(date, filmName, filmDuration, room);
+	
+		if(filmName.isEmpty() || room != 1 && room != 2){
+			throw new NoInfoAddFunctionException();
+		}else if(searchFunction(filmName,dateStr)) {
+			throw new ExistingFunctionException();
+		}else if(searchFunctionByRoom(dateStr,room)) {
+			throw new OccupiedRoomException();
+		}else if(functions.size() == 0) {
+			functions.add(newFunction);
+		}else {
+			functions.add(newFunction);
+		}
+	}
+	
+	public boolean searchFunction(String filmName, String dateStr) {
+		boolean found = false;
+		
+		for (int i = 0; i < functions.size(); i++) {
+			if(functions.get(i).getFilmName().equalsIgnoreCase(filmName) &&
+					functions.get(i).getDateStr().equals(dateStr)) {
+				found = true;
+			}
+		}
+		
+		return found;
+	}
+	
+	public boolean searchFunctionByRoom(String dateStr, int room) {
+		boolean found = false;
+		
+		for (int i = 0; i < functions.size(); i++) {
+			System.out.println(functions.get(i).getDateStr());
+			System.out.println(dateStr);
+			
+			if(functions.get(i).getDateStr().equals(dateStr) && 
+					functions.get(i).getRoom() == room) {
+				found = true;
 			}
 		}
 		

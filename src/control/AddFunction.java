@@ -1,18 +1,25 @@
 package control;
 
 import java.io.IOException;
+import java.text.ParseException;
 
+import exceptions.ExistingFunctionException;
+import exceptions.NoInfoAddFunctionException;
+import exceptions.OccupiedRoomException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import model.CinemaData;
 
 public class AddFunction {
 	@FXML
@@ -38,10 +45,62 @@ public class AddFunction {
 
     @FXML
     private TextField TXT_NAME_FILM;
+    
+    private Alert alert = new Alert(AlertType.ERROR);
 
+	private CinemaData cinema = new CinemaData();
+	
     @FXML
-    void addFunction(ActionEvent event) {
+    void addFunction(ActionEvent event) throws ParseException {
+    	try {
+    		String date = DP_DATE.getValue().toString();
+        	String filmName = TXT_NAME_FILM.getText();
+        	double filmDuration = Double.parseDouble(TXT_DURATION_FILM.getText());
+        	int room = 0;
+        	
+        	if(RDBTTN_MEDIUM_ROOM.isSelected()) {
+        		room = 1;
+        	}else if(RDBTTN_SMALL_ROOM.isSelected()){
+        		room = 2;
+        	}
+        	
+        	cinema.addFunction(date, filmName, filmDuration, room);
+    	}catch (NoInfoAddFunctionException e) {
+			alert.setTitle("Error de información inncompleta");
+			alert.setHeaderText("¡Información incompleta!");
+			alert.setContentText("No has llenado toda la información necesaria para "
+					+ "agendar esta función. Intenta nuevamente.");
+			alert.show();
+		}catch (NumberFormatException e){
+    		alert.setTitle("Error de duración inválida");
+    		alert.setHeaderText("¡Duración inválida!");
+    		alert.setContentText("La duración que escribiste es inválida o no está "
+    				+ "en un valor numérico. Intenta nuevamente.");
+    		alert.show();
+    	}catch (ExistingFunctionException e) {
+    		alert.setTitle("Error de función existente");
+    		alert.setHeaderText("¡La función ya existe!");
+    		alert.setContentText("La función que estás intentando crear ya ha sido"
+    				+ " creada previamente. Intenta nuevamente.");
+    		alert.show();
+    	}catch (OccupiedRoomException e) {
+    		alert.setTitle("Error de sala ocupada");
+    		alert.setHeaderText("¡La sala está ocupada!");
+    		alert.setContentText("La sala a la que estás intentando agregar la función"
+    				+ " ya está ocupada en esta fecha y hora. Intenta nuevamente.");
+    		alert.show();
+		}catch (NullPointerException e) {
+			alert.setTitle("Error de fecha inválida");
+    		alert.setHeaderText("¡Fecha inválida!");
+    		alert.setContentText("No has escrito una fecha aún. Intenta nuevamente.");
+    		alert.show();
+		}
     	
+    	RDBTTN_MEDIUM_ROOM.setSelected(false);
+    	RDBTTN_SMALL_ROOM.setSelected(false);
+    	DP_DATE.setValue(null);
+    	TXT_DURATION_FILM.clear();
+    	TXT_NAME_FILM.clear();
     }
     
     @FXML
@@ -50,6 +109,8 @@ public class AddFunction {
     	loader.setController(new MainFunctionsWindow());
     	Parent root = loader.load();
     	
+    	//MAIN_ADD_FUNCTION_PANE.getScene().getWindow().setHeight(0);
+    	//MAIN_ADD_FUNCTION_PANE.getScene().getWindow().setWidth(0);
     	MAIN_ADD_FUNCTION_PANE.getScene().getWindow().sizeToScene();
     	MAIN_ADD_FUNCTION_PANE.getChildren().setAll(root);
     }

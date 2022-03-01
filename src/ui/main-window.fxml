@@ -11,7 +11,7 @@
    <children>
       <HBox style="-fx-background-color: white;">
          <children>
-            <MenuBar prefHeight="26.0" prefWidth="637.0" style="-fx-background-color: white;">
+            <MenuBar style="-fx-background-color: white;">
               <menus>
                 <Menu mnemonicParsing="false" text="Función">
                   <items>
@@ -27,6 +27,12 @@
                         <MenuItem mnemonicParsing="false" onAction="#seeHistorialViewers" text="Ver historial de espectadores" />
                   </items>
                 </Menu>
+                  <Menu mnemonicParsing="false" text="Salas">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#seeSmallRoom" text="Ver sala pequeña" />
+                        <MenuItem mnemonicParsing="false" onAction="#seeMediumRoom" text="Ver sala media" />
+                    </items>
+                  </Menu>
                 <Menu mnemonicParsing="false" text="Usuario">
                   <items>
                     <MenuItem mnemonicParsing="false" onAction="#addUser" text="Agregar usuario" />
