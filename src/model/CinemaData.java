@@ -72,15 +72,15 @@ public class CinemaData {
 		return found;
 	}
 	
-	public void addFunction(String dateStr, String filmName, double filmDuration, int room) throws ParseException {
+	public void addFunction(String dateStr, String hour, String filmName, double filmDuration, int room) throws ParseException {
 		Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateStr);
-		Function newFunction = new Function(date, filmName, filmDuration, room);
+		Function newFunction = new Function(date, hour, filmName, filmDuration, room);
 	
-		if(filmName.isEmpty() || room != 1 && room != 2){
+		if(filmName.isEmpty() || hour.isEmpty() || room != 1 && room != 2){
 			throw new NoInfoAddFunctionException();
-		}else if(searchFunction(filmName,dateStr)) {
+		}else if(searchFunction(filmName,dateStr,hour)) {
 			throw new ExistingFunctionException();
-		}else if(searchFunctionByRoom(dateStr,room)) {
+		}else if(searchFunctionByRoom(dateStr,room,hour)) {
 			throw new OccupiedRoomException();
 		}else if(functions.size() == 0) {
 			functions.add(newFunction);
@@ -89,12 +89,13 @@ public class CinemaData {
 		}
 	}
 	
-	public boolean searchFunction(String filmName, String dateStr) {
+	public boolean searchFunction(String filmName, String dateStr, String hour) {
 		boolean found = false;
 		
 		for (int i = 0; i < functions.size(); i++) {
 			if(functions.get(i).getFilmName().equalsIgnoreCase(filmName) &&
-					functions.get(i).getDateStr().equals(dateStr)) {
+					functions.get(i).getDateStr().equals(dateStr) &&
+					functions.get(i).getHour().equals(hour)) {
 				found = true;
 			}
 		}
@@ -102,15 +103,13 @@ public class CinemaData {
 		return found;
 	}
 	
-	public boolean searchFunctionByRoom(String dateStr, int room) {
+	public boolean searchFunctionByRoom(String dateStr, int room, String hour) {
 		boolean found = false;
 		
 		for (int i = 0; i < functions.size(); i++) {
-			System.out.println(functions.get(i).getDateStr());
-			System.out.println(dateStr);
-			
 			if(functions.get(i).getDateStr().equals(dateStr) && 
-					functions.get(i).getRoom() == room) {
+					functions.get(i).getRoom() == room &&
+					functions.get(i).getHour().equals(hour)) {
 				found = true;
 			}
 		}

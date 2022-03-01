@@ -6,13 +6,14 @@ import java.util.Date;
 public class Function {
 	
 	private Date date;
-	//Falta agregar la hora de la función y un textField para que el usuario la elija.
+	private String hour;
 	private String filmName;
 	private double filmDuration;
 	private int room;
 	
-	public Function(Date date, String filmName, double filmDuration, int room) {
+	public Function(Date date, String hour, String filmName, double filmDuration, int room) {
 		this.date = date;
+		this.hour = hour;
 		this.filmName = filmName;
 		this.filmDuration = filmDuration;
 		this.room = room;
@@ -31,6 +32,14 @@ public class Function {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+	
+	public String getHour() {
+		return hour;
+	}
+
+	public void setHour(String hour) {
+		this.hour = hour;
 	}
 
 	public String getFilmName() {
@@ -56,6 +65,4 @@ public class Function {
 	public void setRoom(int room) {
 		this.room = room;
 	}
-	
-	
 }

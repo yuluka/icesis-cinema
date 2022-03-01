@@ -42,6 +42,9 @@ public class AddFunction {
     
     @FXML
     private TextField TXT_DURATION_FILM;
+    
+    @FXML
+    private TextField TXT_HOUR_FILM;
 
     @FXML
     private TextField TXT_NAME_FILM;
@@ -54,6 +57,7 @@ public class AddFunction {
     void addFunction(ActionEvent event) throws ParseException {
     	try {
     		String date = DP_DATE.getValue().toString();
+    		String hour = TXT_HOUR_FILM.getText();
         	String filmName = TXT_NAME_FILM.getText();
         	double filmDuration = Double.parseDouble(TXT_DURATION_FILM.getText());
         	int room = 0;
@@ -64,7 +68,7 @@ public class AddFunction {
         		room = 2;
         	}
         	
-        	cinema.addFunction(date, filmName, filmDuration, room);
+        	cinema.addFunction(date, hour, filmName, filmDuration, room);
     	}catch (NoInfoAddFunctionException e) {
 			alert.setTitle("Error de información inncompleta");
 			alert.setHeaderText("¡Información incompleta!");
@@ -100,6 +104,7 @@ public class AddFunction {
     	RDBTTN_SMALL_ROOM.setSelected(false);
     	DP_DATE.setValue(null);
     	TXT_DURATION_FILM.clear();
+    	TXT_HOUR_FILM.clear();
     	TXT_NAME_FILM.clear();
     }
     
