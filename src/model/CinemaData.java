@@ -16,11 +16,29 @@ import exceptions.OccupiedRoomException;
 public class CinemaData {
 	public static ArrayList<User> users = new ArrayList<User>();//Arraylist para guardar todos los users creados.
 	public static ArrayList<Function> functions = new ArrayList<Function>();
+	public static ArrayList<Viewer> viewers = new ArrayList<Viewer>();
+	
+	public static final Room MINIROOM = new Room("Sala pequeña");
+	public static final Room MEDIUMROOM = new Room("Sala mediana");
 		
 	private User adminUser = new User("Admin", "123");//Usuario administrador.
 	
 	public CinemaData() {
 		users.add(adminUser);
+		generateMiniroomSeats();
+		generateMediumroomSeats();
+	}
+	
+	private void generateMiniroomSeats() {
+		for (int i = 0; i < 28; i++) {
+			MINIROOM.addSeats(new Seat(i+1));
+		}
+	}
+	
+	private void generateMediumroomSeats() {
+		for (int i = 0; i < 42; i++) {
+			MEDIUMROOM.addSeats(new Seat(i+1));
+		}
 	}
 	
 	/**Recibe los datos del user que se quiere registrar y revisa si el Array con todos los users 
@@ -115,5 +133,11 @@ public class CinemaData {
 		}
 		
 		return found;
+	}
+	
+	public void addViewer(String name, String id) {
+		Viewer newViewer = new Viewer(name, id);
+		
+		viewers.add(newViewer);
 	}
 }
