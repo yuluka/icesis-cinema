@@ -21,12 +21,12 @@ public class MainFunctionsWindow {
 
     @FXML
     private ImageView BTTN_ADD_VIEWER;
+    
+    @FXML
+    private ImageView BTTN_SEE_MEDIUMROOM;
 
     @FXML
-    private ImageView BTTN_SEE_FUNCTIONS;
-
-    @FXML
-    private ImageView BTTN_SEE_VIEWER;
+    private ImageView BTTN_SEE_MINIROOM;
     
     @FXML
     private Pane MAIN_FUNCTIONS_PANE;
@@ -69,9 +69,9 @@ public class MainFunctionsWindow {
     }
 
     @FXML
-    void seeFunctions(MouseEvent event) throws IOException{
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/functionList-window.fxml"));
-    	loader.setController(new FunctionList());
+    void seeMiniroom(MouseEvent event) throws IOException{
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/seatListMiniroom-window.fxml"));
+    	loader.setController(new SeeMiniroom());
     	Parent root = (Parent) loader.load();
     	
     	//MAIN_FUNCTIONS_PANE.getScene().getWindow().setWidth(926);
@@ -82,9 +82,9 @@ public class MainFunctionsWindow {
     }
 
     @FXML
-    void seeViewers(MouseEvent event) throws IOException {
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/viewersList-window.fxml"));
-    	loader.setController(new ViewerList());
+    void seeMediumroom(MouseEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/seatListMediumroom-window.fxml"));
+    	loader.setController(new SeeMediumroom());
     	Parent root = (Parent) loader.load();
     	
     	//MAIN_FUNCTIONS_PANE.getScene().getWindow().setWidth(718);
@@ -101,9 +101,9 @@ public class MainFunctionsWindow {
     }
     
     @FXML
-    void showTooltipFunctionHistorial(MouseEvent event) {
-    	Tooltip t = new Tooltip("Ver funciones agendadas");
-    	Tooltip.install(BTTN_SEE_FUNCTIONS, t);
+    void showTooltipMediumRoom (MouseEvent event) {
+    	Tooltip t = new Tooltip("Ver la sala mediana");
+    	Tooltip.install(BTTN_SEE_MEDIUMROOM, t);
     }
 
     @FXML
@@ -119,8 +119,8 @@ public class MainFunctionsWindow {
     }
 
     @FXML
-    void showTooltipViewersHistorial(MouseEvent event) {
-    	Tooltip t = new Tooltip("Ver espectadores registrados");
-    	Tooltip.install(BTTN_SEE_VIEWER, t);
+    void showTooltipMiniRoom (MouseEvent event) {
+    	Tooltip t = new Tooltip("Ver la sala pequeña");
+    	Tooltip.install(BTTN_SEE_MINIROOM, t);
     }
 }

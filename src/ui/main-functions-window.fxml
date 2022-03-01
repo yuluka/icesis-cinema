@@ -21,14 +21,14 @@
             <Image url="@../../icons/user%20settings%20icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="BTTN_SEE_FUNCTIONS" accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" layoutX="119.0" layoutY="227.0" onMouseClicked="#seeFunctions" onMouseMoved="#showTooltipFunctionHistorial" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="BTTN_SEE_MINIROOM" accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" layoutX="119.0" layoutY="227.0" onMouseClicked="#seeMiniroom" onMouseMoved="#showTooltipMiniRoom" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../icons/scheduled%20functions%20icon.png" />
+            <Image url="@../../icons/room%20icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="BTTN_SEE_VIEWER" accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" layoutX="330.0" layoutY="227.0" onMouseClicked="#seeViewers" onMouseMoved="#showTooltipViewersHistorial" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="BTTN_SEE_MEDIUMROOM" accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" layoutX="330.0" layoutY="227.0" onMouseClicked="#seeMediumroom" onMouseMoved="#showTooltipMediumRoom" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../icons/added%20spectators%20icon.png" />
+            <Image url="@../../icons/room%202%20icon.png" />
          </image>
       </ImageView>
    </children>
