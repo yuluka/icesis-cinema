@@ -6,17 +6,21 @@ import java.util.Date;
 public class Function {
 	
 	private Date date;
+	private String dateStr;
 	private String hour;
 	private String filmName;
 	private double filmDuration;
 	private int room;
+	private String roomStr;
 	
 	public Function(Date date, String hour, String filmName, double filmDuration, int room) {
 		this.date = date;
+		setDateStr();
 		this.hour = hour;
 		this.filmName = filmName;
 		this.filmDuration = filmDuration;
 		this.room = room;
+		setRoomStr();
 	}
 
 	public Date getDate() {
@@ -24,9 +28,6 @@ public class Function {
 	}
 	
 	public String getDateStr() {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		String dateStr = sdf.format(date);
-		
 		return dateStr;
 	}
 
@@ -34,6 +35,11 @@ public class Function {
 		this.date = date;
 	}
 	
+	public void setDateStr() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		dateStr = sdf.format(date);
+	}
+
 	public String getHour() {
 		return hour;
 	}
@@ -64,5 +70,17 @@ public class Function {
 
 	public void setRoom(int room) {
 		this.room = room;
+	}
+
+	public String getRoomStr() {
+		return roomStr;
+	}
+
+	public void setRoomStr() {
+		if(room == 1) {
+			roomStr = "Sala media";
+		}else {
+			roomStr = "Sala pequeña";
+		}
 	}
 }

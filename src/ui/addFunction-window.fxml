@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -43,8 +44,11 @@
       <RadioButton fx:id="RDBTTN_MEDIUM_ROOM" layoutX="14.0" layoutY="250.0" mnemonicParsing="false" text="Agregar a la sala media">
          <font>
             <Font size="16.0" />
-         </font></RadioButton>
-      <RadioButton fx:id="RDBTTN_SMALL_ROOM" layoutX="14.0" layoutY="279.0" mnemonicParsing="false" text="Agregar a la mini sala">
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="rdBttnGroup" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="RDBTTN_SMALL_ROOM" layoutX="14.0" layoutY="279.0" mnemonicParsing="false" text="Agregar a la mini sala" toggleGroup="$rdBttnGroup">
          <font>
             <Font size="16.0" />
          </font>

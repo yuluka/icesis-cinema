@@ -2,7 +2,6 @@ package control;
 
 import java.io.IOException;
 import java.text.ParseException;
-
 import exceptions.ExistingFunctionException;
 import exceptions.NoInfoAddFunctionException;
 import exceptions.OccupiedRoomException;
@@ -50,6 +49,7 @@ public class AddFunction {
     private TextField TXT_NAME_FILM;
     
     private Alert alert = new Alert(AlertType.ERROR);
+    private Alert alertAux;
 
 	private CinemaData cinema = new CinemaData();
 	
@@ -69,6 +69,11 @@ public class AddFunction {
         	}
         	
         	cinema.addFunction(date, hour, filmName, filmDuration, room);
+        	alertAux = new Alert(AlertType.INFORMATION);
+        	alertAux.setTitle("Agregado correctamente");
+        	alertAux.setHeaderText("¡Función agregada correctamente!");
+        	alertAux.setContentText("La función ha sido agregada correctamente.");
+        	alertAux.show();
     	}catch (NoInfoAddFunctionException e) {
 			alert.setTitle("Error de información inncompleta");
 			alert.setHeaderText("¡Información incompleta!");
@@ -119,4 +124,5 @@ public class AddFunction {
     	MAIN_ADD_FUNCTION_PANE.getScene().getWindow().sizeToScene();
     	MAIN_ADD_FUNCTION_PANE.getChildren().setAll(root);
     }
+
 }
