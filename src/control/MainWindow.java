@@ -114,6 +114,7 @@ public class MainWindow implements Initializable{
     	Parent root = loader.load();
     	
     	MAIN_PANE.getChildren().setAll(root);
+    	MAIN_PANE.getScene().getWindow().sizeToScene();
     }
 
     @FXML
@@ -123,6 +124,7 @@ public class MainWindow implements Initializable{
     	Parent root = loader.load();
     	
     	MAIN_PANE.getChildren().setAll(root);
+    	MAIN_PANE.getScene().getWindow().sizeToScene();
     }
 
     @FXML

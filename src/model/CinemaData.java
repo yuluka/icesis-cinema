@@ -135,6 +135,15 @@ public class CinemaData {
 		return found;
 	}
 	
+	public void removeFunction(Function functionToRemove) {
+		for (int i = 0; i < functions.size(); i++) {
+			if(functions.get(i).equals(functionToRemove)) {
+				functions.remove(i);
+				i = functions.size();
+			}
+		}
+	}
+	
 	public void addViewer(String name, String id) {
 		Viewer newViewer = new Viewer(name, id);
 		
