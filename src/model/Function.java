@@ -12,6 +12,7 @@ public class Function {
 	private double filmDuration;
 	private int room;
 	private String roomStr;
+	private Room roomA;
 	
 	public Function(Date date, String hour, String filmName, double filmDuration, int room) {
 		this.date = date;
@@ -21,6 +22,7 @@ public class Function {
 		this.filmDuration = filmDuration;
 		this.room = room;
 		setRoomStr();
+		setRoomA();
 	}
 
 	public Date getDate() {
@@ -33,6 +35,7 @@ public class Function {
 
 	public void setDate(Date date) {
 		this.date = date;
+		setDateStr();
 	}
 	
 	public void setDateStr() {
@@ -70,6 +73,8 @@ public class Function {
 
 	public void setRoom(int room) {
 		this.room = room;
+		setRoomStr();
+		setRoomA();
 	}
 
 	public String getRoomStr() {
@@ -82,5 +87,31 @@ public class Function {
 		}else {
 			roomStr = "Sala pequeña";
 		}
+	}
+	
+	public void setRoomA() {		
+		if(room == 1) {
+			roomA = new Room("Sala media");
+			generateMediumroomSeats();
+		}else if(room == 2) {
+			roomA = new Room("Sala pequeña");
+			generateMiniroomSeats();
+		}
+	}
+	
+	private void generateMiniroomSeats() {
+		for (int i = 0; i < 28; i++) {
+			roomA.addSeats(new Seat(i+1));
+		}
+	}
+	
+	private void generateMediumroomSeats() {
+		for (int i = 0; i < 42; i++) {
+			roomA.addSeats(new Seat(i+1));
+		}
+	}
+	
+	public Room getRoomA() {
+		return roomA;
 	}
 }
