@@ -57,6 +57,8 @@ public class EditFunction implements Initializable {
     	CinemaData.functions.get(index).setFilmName(newFilmName);
     	CinemaData.functions.get(index).setHour(newHour);
     	
+    	cinema.removePastFunctions(selectedFunction);
+    	
     	Stage stageAux = (Stage) BTTN_SAVE_CHANGES.getScene().getWindow();
     	stageAux.close();
     	functionListAux.rechargeTheList();

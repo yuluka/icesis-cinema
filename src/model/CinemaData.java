@@ -8,6 +8,7 @@ import java.util.Date;
 import exceptions.AlreadyExistingUserException;
 import exceptions.ExistingFunctionException;
 import exceptions.NoInfoAddFunctionException;
+import exceptions.NoInfoAddViewerException;
 import exceptions.NoInfoLoginUserException;
 import exceptions.NoInfoRegisterUserException;
 import exceptions.NonExistingUserException;
@@ -15,7 +16,10 @@ import exceptions.OccupiedRoomException;
 
 public class CinemaData {
 	public static ArrayList<User> users = new ArrayList<User>();//Arraylist para guardar todos los users creados.
+	
 	public static ArrayList<Function> functions = new ArrayList<Function>();
+	public static ArrayList<Function> functionsHistorial = new ArrayList<Function>();
+	
 	public static ArrayList<Viewer> viewers = new ArrayList<Viewer>();
 		
 	private User adminUser = new User("Admin", "123");//Usuario administrador.
@@ -83,20 +87,22 @@ public class CinemaData {
 			throw new ExistingFunctionException();
 		}else if(searchFunctionByRoom(dateStr,room,hour)) {
 			throw new OccupiedRoomException();
-		}else if(functions.size() == 0) {
-			functions.add(newFunction);
 		}else {
-			functions.add(newFunction);
+			if(!compareDates(date)) {
+				functions.add(newFunction);
+			}
+			
+			functionsHistorial.add(newFunction);
 		}
 	}
 	
 	public boolean searchFunction(String filmName, String dateStr, String hour) {
 		boolean found = false;
 		
-		for (int i = 0; i < functions.size(); i++) {
-			if(functions.get(i).getFilmName().equalsIgnoreCase(filmName) &&
-					functions.get(i).getDateStr().equals(dateStr) &&
-					functions.get(i).getHour().equals(hour)) {
+		for (int i = 0; i < functionsHistorial.size(); i++) {
+			if(functionsHistorial.get(i).getFilmName().equalsIgnoreCase(filmName) &&
+					functionsHistorial.get(i).getDateStr().equals(dateStr) &&
+					functionsHistorial.get(i).getHour().equals(hour)) {
 				found = true;
 			}
 		}
@@ -107,10 +113,10 @@ public class CinemaData {
 	public boolean searchFunctionByRoom(String dateStr, int room, String hour) {
 		boolean found = false;
 		
-		for (int i = 0; i < functions.size(); i++) {
-			if(functions.get(i).getDateStr().equals(dateStr) && 
-					functions.get(i).getRoom() == room &&
-					functions.get(i).getHour().equals(hour)) {
+		for (int i = 0; i < functionsHistorial.size(); i++) {
+			if(functionsHistorial.get(i).getDateStr().equals(dateStr) && 
+					functionsHistorial.get(i).getRoom() == room &&
+					functionsHistorial.get(i).getHour().equals(hour)) {
 				found = true;
 			}
 		}
@@ -127,12 +133,6 @@ public class CinemaData {
 		}
 	}
 	
-	public void addViewer(String name, String id) {
-		Viewer newViewer = new Viewer(name, id);
-		
-		viewers.add(newViewer);
-	}
-	
 	public int searchFunctionToReplace(Function function) {
 		int index = 0;
 		
@@ -144,5 +144,43 @@ public class CinemaData {
 		}
 		
 		return index;
+	}
+	
+	public boolean compareDates(Date functionDate) {
+		boolean pastDate = false;
+		
+		Date now = new Date();
+	
+		if(now.getTime() < functionDate.getTime()) {
+			pastDate = false;
+		}else {
+			pastDate = true;
+		}
+		
+		return pastDate;
+	}
+	
+	public void removePastFunctions(Function function) {
+		if(compareDates(function.getDate())) {
+			removeFunction(function);
+		}
+	}
+	
+	public void addViewer(String name, String id) {
+		if(name.isEmpty() || id.isEmpty()) {
+			throw new NoInfoAddViewerException();
+		}else {
+			Viewer newViewer = new Viewer(name, id);
+			
+			viewers.add(newViewer);
+		}
+	}
+	
+	public void removeViewer(Viewer viewerToRemove) {
+		for (int i = 0; i < viewers.size(); i++) {
+			if(viewers.get(i).equals(viewerToRemove)) {
+				viewers.remove(i);
+			}
+		}
 	}
 }

@@ -35,7 +35,7 @@
       </Button>
       <ImageView fitHeight="117.0" fitWidth="136.0" layoutX="780.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Downloads/icesi%20cinema%20zoom.png" />
+            <Image url="@../../images/icesi%20cinema%20zoom.png" />
          </image>
       </ImageView>
       <ImageView fx:id="BTTN_BACK" accessibleRole="BUTTON" fitHeight="56.0" fitWidth="48.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
