@@ -103,8 +103,13 @@ public class MainWindow implements Initializable{
     }
 
     @FXML
-    void seeUsers(ActionEvent event) {
-
+    void seeUsers(ActionEvent event) throws IOException{
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/usersList-window.fxml"));
+    	loader.setController(new UserList());
+    	Parent root = loader.load();
+    	
+    	MAIN_PANE.getChildren().setAll(root);
+    	MAIN_PANE.getScene().getWindow().sizeToScene();
     }
     
     @FXML

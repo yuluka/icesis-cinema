@@ -22,10 +22,10 @@ public class CinemaData {
 	
 	public static ArrayList<Viewer> viewers = new ArrayList<Viewer>();
 		
-	private User adminUser = new User("Admin", "123");//Usuario administrador.
+	private static User adminUser = new User("Admin", "123");//Usuario administrador.
 	
 	public CinemaData() {
-		users.add(adminUser);
+		
 	}
 	
 	/**Recibe los datos del user que se quiere registrar y revisa si el Array con todos los users 
@@ -60,6 +60,8 @@ public class CinemaData {
 
 		if(id.equals("")) {
 			throw new NoInfoLoginUserException();
+		}else if(adminUser.getUserID().equalsIgnoreCase(id)) {
+			found = true;
 		}else {
 			if(users.size() != 0) { //Búsqueda lineal.
 				for (int i = 0; i < users.size(); i++) {
