@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="MAIN_PANE" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="248.0" layoutY="69.0" text="Minisala">
+         <font>
+            <Font name="Arial Bold Italic" size="26.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="IMGV_SEAT5" fitHeight="48.0" fitWidth="48.0" layoutX="326.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT3" fitHeight="48.0" fitWidth="48.0" layoutX="226.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT2" fitHeight="48.0" fitWidth="48.0" layoutX="177.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT4" fitHeight="48.0" fitWidth="48.0" layoutX="276.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT1" fitHeight="48.0" fitWidth="48.0" layoutX="129.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT6" fitHeight="48.0" fitWidth="48.0" layoutX="375.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT7" fitHeight="48.0" fitWidth="48.0" layoutX="425.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <Line endX="100.0" layoutX="301.0" layoutY="124.0" startX="-100.0" />
+      <ImageView fx:id="IMGV_SEAT12" fitHeight="48.0" fitWidth="48.0" layoutX="325.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT10" fitHeight="48.0" fitWidth="48.0" layoutX="225.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT9" fitHeight="48.0" fitWidth="48.0" layoutX="176.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT11" fitHeight="48.0" fitWidth="48.0" layoutX="275.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT8" fitHeight="48.0" fitWidth="48.0" layoutX="128.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT13" fitHeight="48.0" fitWidth="48.0" layoutX="374.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT14" fitHeight="48.0" fitWidth="48.0" layoutX="424.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT19" fitHeight="48.0" fitWidth="48.0" layoutX="326.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT17" fitHeight="48.0" fitWidth="48.0" layoutX="226.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT16" fitHeight="48.0" fitWidth="48.0" layoutX="177.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT18" fitHeight="48.0" fitWidth="48.0" layoutX="276.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT15" fitHeight="48.0" fitWidth="48.0" layoutX="129.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT20" fitHeight="48.0" fitWidth="48.0" layoutX="375.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT21" fitHeight="48.0" fitWidth="48.0" layoutX="425.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT26" fitHeight="48.0" fitWidth="48.0" layoutX="326.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT24" fitHeight="48.0" fitWidth="48.0" layoutX="226.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT23" fitHeight="48.0" fitWidth="48.0" layoutX="177.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT25" fitHeight="48.0" fitWidth="48.0" layoutX="276.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT22" fitHeight="48.0" fitWidth="48.0" layoutX="129.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT27" fitHeight="48.0" fitWidth="48.0" layoutX="375.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT28" fitHeight="48.0" fitWidth="48.0" layoutX="425.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="BTTN_NEXT" layoutX="483.0" layoutY="338.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="103.0" text="Siguiente">
+         <font>
+            <Font name="Arial Italic" size="17.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
