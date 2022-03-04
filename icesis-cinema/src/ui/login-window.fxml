@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="208.0" prefWidth="334.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="TXT_ID" layoutX="42.0" layoutY="67.0" promptText="Número de cédula">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </TextField>
+      <Label layoutX="109.0" layoutY="25.0" text="Iniciar sesión">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="BTTN_LOGIN" layoutX="42.0" layoutY="145.0" mnemonicParsing="false" onAction="#login" prefHeight="33.0" prefWidth="112.0" style="-fx-background-color: #E2E0E0;" text="Ingresar">
+         <font>
+            <Font name="Arial Italic" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="BTTN_REGISTER" layoutX="180.0" layoutY="145.0" mnemonicParsing="false" onAction="#gotToRegisterUser" style="-fx-background-color: #E2E0E0;" text="Registrarte">
+         <font>
+            <Font name="Arial Italic" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

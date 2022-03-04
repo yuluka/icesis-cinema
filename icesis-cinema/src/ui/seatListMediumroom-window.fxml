@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="MAIN_PANE" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="431.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="219.0" layoutY="41.0" prefHeight="45.0" prefWidth="164.0" text="Sala media">
+         <font>
+            <Font name="Arial Bold Italic" size="30.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="IMGV_SEAT1" fitHeight="45.0" fitWidth="48.0" layoutX="143.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT2" fitHeight="45.0" fitWidth="45.0" layoutX="188.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT3" fitHeight="45.0" fitWidth="45.0" layoutX="233.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT4" fitHeight="45.0" fitWidth="45.0" layoutX="278.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT5" fitHeight="45.0" fitWidth="45.0" layoutX="323.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT6" fitHeight="45.0" fitWidth="56.0" layoutX="368.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT7" fitHeight="45.0" fitWidth="45.0" layoutX="413.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <Line endX="100.0" layoutX="298.0" layoutY="102.0" startX="-100.0" />
+      <ImageView fx:id="BTTN_BACK" accessibleRole="BUTTON" fitHeight="56.0" fitWidth="48.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/back%20icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT8" fitHeight="45.0" fitWidth="48.0" layoutX="144.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT9" fitHeight="45.0" fitWidth="45.0" layoutX="189.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT10" fitHeight="45.0" fitWidth="45.0" layoutX="234.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT11" fitHeight="45.0" fitWidth="45.0" layoutX="279.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT12" fitHeight="45.0" fitWidth="45.0" layoutX="324.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT13" fitHeight="45.0" fitWidth="56.0" layoutX="369.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT14" fitHeight="45.0" fitWidth="45.0" layoutX="414.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT15" fitHeight="45.0" fitWidth="48.0" layoutX="144.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT16" fitHeight="45.0" fitWidth="45.0" layoutX="189.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT17" fitHeight="45.0" fitWidth="45.0" layoutX="234.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT18" fitHeight="45.0" fitWidth="45.0" layoutX="279.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT19" fitHeight="45.0" fitWidth="45.0" layoutX="324.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT20" fitHeight="45.0" fitWidth="56.0" layoutX="369.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT21" fitHeight="45.0" fitWidth="45.0" layoutX="414.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT22" fitHeight="45.0" fitWidth="48.0" layoutX="144.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT23" fitHeight="45.0" fitWidth="45.0" layoutX="189.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT24" fitHeight="45.0" fitWidth="45.0" layoutX="234.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT25" fitHeight="45.0" fitWidth="45.0" layoutX="279.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT26" fitHeight="45.0" fitWidth="45.0" layoutX="324.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT27" fitHeight="45.0" fitWidth="56.0" layoutX="369.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT28" fitHeight="45.0" fitWidth="45.0" layoutX="414.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT29" fitHeight="45.0" fitWidth="48.0" layoutX="144.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT30" fitHeight="45.0" fitWidth="45.0" layoutX="189.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT31" fitHeight="45.0" fitWidth="45.0" layoutX="234.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT32" fitHeight="45.0" fitWidth="45.0" layoutX="279.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT33" fitHeight="45.0" fitWidth="45.0" layoutX="324.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT34" fitHeight="45.0" fitWidth="56.0" layoutX="369.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT35" fitHeight="45.0" fitWidth="45.0" layoutX="414.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT36" fitHeight="45.0" fitWidth="48.0" layoutX="144.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT37" fitHeight="45.0" fitWidth="45.0" layoutX="189.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT38" fitHeight="45.0" fitWidth="45.0" layoutX="234.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT39" fitHeight="45.0" fitWidth="45.0" layoutX="279.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT40" fitHeight="45.0" fitWidth="45.0" layoutX="324.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT41" fitHeight="45.0" fitWidth="56.0" layoutX="369.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IMGV_SEAT42" fitHeight="45.0" fitWidth="45.0" layoutX="414.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/circle.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
