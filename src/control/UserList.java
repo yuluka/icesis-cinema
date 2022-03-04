@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -18,6 +19,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import model.CinemaData;
 import model.User;
 
@@ -57,8 +59,21 @@ public class UserList implements Initializable{
     }
     
     @FXML
-    void editUser(ActionEvent event) {
-
+    void editUser(ActionEvent event) throws IOException {
+    	try {
+    		if (!selectedUser.equals(null)) {
+    			FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/editUser-window.fxml"));
+    	    	loader.setController(new EditUser(selectedUser, this));
+    	    	Parent root = loader.load();
+    	    	
+    	    	Stage stage = new Stage();
+    	    	Scene scene = new Scene(root);
+    	    	stage.setScene(scene);
+    	    	stage.show();
+			}
+    	}catch (NullPointerException e) {
+			
+		}
     }
 
     @FXML
@@ -92,5 +107,14 @@ public class UserList implements Initializable{
 		TVCOLUMN_ID.setCellValueFactory(new PropertyValueFactory<User,String>("userID"));
 		
 		TV_USERS.setItems(users);
+	}
+	
+	public void rechargeTheList() throws IOException {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/usersList-window.fxml"));
+    	loader.setController(new UserList());
+    	Parent root = loader.load();
+    	
+    	MAIN_PANE.getChildren().setAll(root);
+    	MAIN_PANE.getScene().getWindow().sizeToScene();
 	}
 }

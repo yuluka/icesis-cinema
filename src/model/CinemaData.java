@@ -79,6 +79,19 @@ public class CinemaData {
 		return found;
 	}
 	
+	public int searchUserToReplace(User editUser) {
+		int index = 0;
+		
+		for (int i = 0; i < users.size(); i++) {
+			if(users.get(i).equals(editUser)) {
+				index = i;
+				i = users.size();
+			}
+		}
+		
+		return index;
+	}
+	
 	public void addFunction(String dateStr, String hour, String filmName, double filmDuration, int room) throws ParseException {
 		Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateStr);
 		Function newFunction = new Function(date, hour, filmName, filmDuration, room);
