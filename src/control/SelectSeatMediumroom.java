@@ -176,6 +176,8 @@ public class SelectSeatMediumroom implements Initializable {
 			}
 		}
     	
+    	CinemaData.saveFunctions();
+    	CinemaData.saveViewers();
     	goToMainWindow();
     }
     

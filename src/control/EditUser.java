@@ -33,15 +33,10 @@ public class EditUser implements Initializable{
 
 	@FXML
     void saveChanges(ActionEvent event) throws IOException {
-    	CinemaData cinema = new CinemaData();
-		
 		String name = TXT_NAME.getText();
     	String id = TXT_ID.getText();
     	
-    	int index = cinema.searchUserToReplace(selectedUser);
-    	
-    	CinemaData.users.get(index).setUserName(name);
-    	CinemaData.users.get(index).setUserID(id);
+    	CinemaData.searchUserToReplace(selectedUser, id, name);
     	
     	Stage stage = (Stage) BTTN_SAVE_CHANGES.getScene().getWindow();
     	stage.close();

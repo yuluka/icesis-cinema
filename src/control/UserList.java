@@ -80,6 +80,7 @@ public class UserList implements Initializable{
     void removeUser(ActionEvent event) {
     	try {
     		CinemaData.users.remove(selectedUser);
+    		CinemaData.saveUsers();
     		updateTVInfo();
     	}catch (NullPointerException e) {
 			

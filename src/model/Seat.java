@@ -1,6 +1,13 @@
 package model;
 
-public class Seat {
+import java.io.Serializable;
+
+public class Seat implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private boolean occupied;
 	private int number;

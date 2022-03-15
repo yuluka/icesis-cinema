@@ -33,8 +33,6 @@ public class Login {
     
     private Alert alert;
     
-    private CinemaData cinema = new CinemaData();
-
     @FXML
     void gotToRegisterUser(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/register-window.fxml"));
@@ -59,7 +57,7 @@ public class Login {
     	String id = TXT_ID.getText();
     	
     	try {
-			if(cinema.searchUser(id)) {
+			if(CinemaData.searchUser(id)) {
 				goToMainWindow();
 				TXT_ID.clear();
 			}

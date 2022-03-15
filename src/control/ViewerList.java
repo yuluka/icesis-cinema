@@ -51,6 +51,9 @@ public class ViewerList implements Initializable {
     	}catch (NullPointerException e) {
 			
 		}
+    	
+    	CinemaData.saveViewers();
+    	CinemaData.saveFunctions();
     }
     
     @FXML

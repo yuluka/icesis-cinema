@@ -33,9 +33,6 @@ public class Register {
     
     private Alert alert;
     
-    private CinemaData cinema = new CinemaData();
-
-    
     /**Llama al método para registrar un usuario, en CinemaData, y atrapa la exception en caso de que ya 
     exista el usuario y lanza un alert para decirle al usuario*/
     @FXML
@@ -44,7 +41,7 @@ public class Register {
     		String name = TXT_NAME.getText();
         	String id = TXT_ID.getText();
     		
-    		cinema.registerUser(name, id);
+    		CinemaData.registerUser(name, id);
         	
         	TXT_ID.clear();
         	TXT_NAME.clear();

@@ -1,6 +1,12 @@
 package model;
 
-public class Viewer {
+import java.io.Serializable;
+
+public class Viewer implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private String name;
 	private String id;
@@ -30,7 +36,7 @@ public class Viewer {
 	public boolean equals(Object obj) {
 		if(obj instanceof Viewer) {
 			Viewer other = (Viewer) obj;
-			return this.id.equals(other.getId());
+			return this.id.equalsIgnoreCase(other.getId());
 		}else {
 			return false;
 		}

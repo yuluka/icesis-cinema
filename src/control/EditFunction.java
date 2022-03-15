@@ -43,21 +43,19 @@ public class EditFunction implements Initializable {
 
     @FXML
     void saveChanges(ActionEvent event) throws ParseException, IOException {
-    	CinemaData cinema = new CinemaData();
-    	
     	String newDate = DP_DATE.getValue().toString();
     	Date date = new SimpleDateFormat("yyyy-MM-dd").parse(newDate);
     	double newDuration = Double.parseDouble(TXT_DURATION.getText());
     	String newFilmName = TXT_FILM_NAME.getText();
     	String newHour = TXT_HOUR.getText();
     	
-    	int index = cinema.searchFunctionToReplace(selectedFunction);
+    	int index = CinemaData.searchFunctionToReplace(selectedFunction);
     	CinemaData.functions.get(index).setDate(date);
     	CinemaData.functions.get(index).setFilmDuration(newDuration);
     	CinemaData.functions.get(index).setFilmName(newFilmName);
     	CinemaData.functions.get(index).setHour(newHour);
     	
-    	cinema.removePastFunctions(selectedFunction);
+    	CinemaData.removePastFunctions(selectedFunction);
     	
     	Stage stageAux = (Stage) BTTN_SAVE_CHANGES.getScene().getWindow();
     	stageAux.close();

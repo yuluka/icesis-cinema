@@ -51,9 +51,7 @@ public class AddFunction {
     private Alert alert = new Alert(AlertType.ERROR);
     private Alert alertAux;
 
-	private CinemaData cinema = new CinemaData();
-	
-    @FXML
+	@FXML
     void addFunction(ActionEvent event) throws ParseException {
     	try {
     		String date = DP_DATE.getValue().toString();
@@ -68,7 +66,7 @@ public class AddFunction {
         		room = 2;
         	}
         	
-        	cinema.addFunction(date, hour, filmName, filmDuration, room);
+        	CinemaData.addFunction(date, hour, filmName, filmDuration, room);
         	alertAux = new Alert(AlertType.INFORMATION);
         	alertAux.setTitle("Agregado correctamente");
         	alertAux.setHeaderText("¡Función agregada correctamente!");

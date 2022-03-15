@@ -2,6 +2,7 @@ package control;
 
 import java.io.IOException;
 
+import exceptions.AlreadyExistingViewerException;
 import exceptions.NoInfoAddViewerException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -43,20 +44,25 @@ public class AddViewer {
     		String name = TXT_NAME.getText();
         	String id = TXT_ID.getText();
         	
-        	CinemaData cinema = new CinemaData();
-        	cinema.addViewer(name, id);
-        	
-        	TXT_ID.clear();
-        	TXT_NAME.clear();
+        	CinemaData.addViewer(name, id);
         	
         	goToSelectFunction(new Viewer(name,id));
-		}catch (NoInfoAddViewerException e) {
+		} catch (NoInfoAddViewerException e) {
 			alert.setTitle("Error de información incompleta");
 			alert.setHeaderText("¡Información incompleta!");
 			alert.setContentText("No has llenado toda la información necesaria para "
 					+ "agregar a este espectador. Intenta nuevamente.");
 			alert.show();
+		} catch (AlreadyExistingViewerException e) {
+			alert.setTitle("Error de espectador existente");
+			alert.setHeaderText("¡Información de espectador errónea!");
+			alert.setContentText("El espectador que estás tratando de registrar ya ha sido "
+					+ "registrado bajo otro nombre. Intenta nuevamente.");
+			alert.show();
 		}
+    	
+    	TXT_ID.clear();
+    	TXT_NAME.clear();
     }
     
     public void goToSelectFunction(Viewer newViewer) throws IOException{

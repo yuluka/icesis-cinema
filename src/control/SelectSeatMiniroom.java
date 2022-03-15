@@ -135,6 +135,8 @@ public class SelectSeatMiniroom implements Initializable {
 			}
 		}
     	
+    	CinemaData.saveFunctions();
+    	CinemaData.saveViewers();
     	goToMainWindow();
     }
     

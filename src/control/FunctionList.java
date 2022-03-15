@@ -75,6 +75,8 @@ public class FunctionList implements Initializable{
     	}catch (NullPointerException e) {
 			
 		}
+    	
+    	CinemaData.saveFunctions();
     }
 
     @FXML
@@ -85,6 +87,8 @@ public class FunctionList implements Initializable{
 		} catch (NullPointerException e) {
 			
 		}
+    	
+    	CinemaData.saveFunctions();
     }
     
     @FXML

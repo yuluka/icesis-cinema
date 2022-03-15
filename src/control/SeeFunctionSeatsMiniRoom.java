@@ -120,12 +120,11 @@ public class SeeFunctionSeatsMiniRoom implements Initializable {
     
     @FXML
     void back(MouseEvent event) throws IOException {
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/main-functions-window.fxml"));
-    	loader.setController(new MainFunctionsWindow());
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/functionList-window.fxml"));
+    	loader.setController(new FunctionList());
     	Parent root = loader.load();
     	
     	MAIN_PANE.getChildren().setAll(root);
-    	MAIN_PANE.setPrefSize(600, 400);
     	MAIN_PANE.getScene().getWindow().sizeToScene();
     }
 
