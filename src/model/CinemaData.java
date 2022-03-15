@@ -35,14 +35,11 @@ public class CinemaData implements Serializable {
 	public static ArrayList<Function> functionsHistorial = new ArrayList<Function>();
 	
 	public static ArrayList<Viewer> viewers = new ArrayList<Viewer>();
-		
-	private static User adminUser = new User("Admin", "123");//Usuario administrador.
-	
-	
+			
 	public static void loadData() {
 		loadUsers();
 		loadFunctions();
-		//loadHistorialFunctions();
+		loadHistorialFunctions();
 		loadViewers();
 	}
 	
@@ -82,8 +79,22 @@ public class CinemaData implements Serializable {
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	public static void loadHistorialFunctions() {
-		
+		try {
+			File file = new File("data/Functions historial data.temp");
+			FileInputStream fis = new FileInputStream(file);
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			functionsHistorial = (ArrayList<Function>) ois.readObject();
+			
+			ois.close();
+		}catch (FileNotFoundException e) {
+			
+		} catch (IOException e) {
+			
+		} catch (ClassNotFoundException e) {
+			
+		}
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -125,6 +136,23 @@ public class CinemaData implements Serializable {
 			FileOutputStream fos = new FileOutputStream(file);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			oos.writeObject(functions);
+			
+			oos.close();
+		} catch (FileNotFoundException e) {
+			
+		} catch (IOException e) {
+			
+		}
+		
+		saveFunctionsHistorial();
+	}
+	
+	public static void saveFunctionsHistorial() {
+		try {
+			File file = new File("data/Functions historial data.temp");
+			FileOutputStream fos = new FileOutputStream(file);
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			oos.writeObject(functionsHistorial);
 			
 			oos.close();
 		} catch (FileNotFoundException e) {
@@ -183,8 +211,6 @@ public class CinemaData implements Serializable {
 
 		if(id.equals("")) {
 			throw new NoInfoLoginUserException();
-		}else if(adminUser.getUserID().equalsIgnoreCase(id)) {
-			found = true;
 		}else {
 			if(users.size() != 0) { //Búsqueda lineal.
 				for (int i = 0; i < users.size(); i++) {

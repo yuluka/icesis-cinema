@@ -93,13 +93,13 @@ public class MainWindow implements Initializable{
     }
    
     @FXML
-    void seeHistorialFunctions(ActionEvent event) {
-
-    }
-
-    @FXML
-    void seeHistorialViewers(ActionEvent event) {
-
+    void seeHistorialFunctions(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/functionHistorial-window.fxml"));
+    	loader.setController(new FunctionHistorial());
+    	Parent root = loader.load();
+    	
+    	MAIN_PANE.getChildren().setAll(root);
+    	MAIN_PANE.getScene().getWindow().sizeToScene();
     }
 
     @FXML

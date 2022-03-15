@@ -24,7 +24,6 @@
                   <items>
                     <MenuItem mnemonicParsing="false" onAction="#addViewer" text="Agregar espectador" />
                         <MenuItem mnemonicParsing="false" onAction="#seeViewers" text="Ver espectadores" />
-                        <MenuItem mnemonicParsing="false" onAction="#seeHistorialViewers" text="Ver historial de espectadores" />
                   </items>
                 </Menu>
                   <Menu mnemonicParsing="false" text="Salas">

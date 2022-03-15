@@ -117,10 +117,8 @@ public class AddFunction {
     	loader.setController(new MainFunctionsWindow());
     	Parent root = loader.load();
     	
-    	//MAIN_ADD_FUNCTION_PANE.getScene().getWindow().setHeight(0);
-    	//MAIN_ADD_FUNCTION_PANE.getScene().getWindow().setWidth(0);
-    	MAIN_ADD_FUNCTION_PANE.getScene().getWindow().sizeToScene();
     	MAIN_ADD_FUNCTION_PANE.getChildren().setAll(root);
+    	MAIN_ADD_FUNCTION_PANE.getScene().getWindow().sizeToScene();
     }
 
 }
