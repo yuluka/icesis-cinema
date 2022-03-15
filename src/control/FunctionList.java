@@ -29,6 +29,9 @@ public class FunctionList implements Initializable{
 
     @FXML
     private Button BTTN_DELETE;
+    
+    @FXML
+    private Button BTTN_SEATS;
 
     @FXML
     private Button BTTN_EDIT;
@@ -131,4 +134,27 @@ public class FunctionList implements Initializable{
     	MAIN_PANE.getChildren().setAll(root);
     	MAIN_PANE.getScene().getWindow().sizeToScene();
 	}
+	
+    @FXML
+    void seeFunctionSeats(ActionEvent event) throws IOException {
+    	try {
+    		FXMLLoader loader;
+    		
+    		if(function.getRoom() == 1) {
+    			loader = new FXMLLoader(getClass().getResource("../ui/seeFunctionSeatsMediumRoom-window.fxml"));
+				loader.setController(new SeeFunctionSeatsMediumRoom(function));
+
+			}else {
+				loader = new FXMLLoader(getClass().getResource("../ui/seeFunctionSeatsMiniRoom-window.fxml"));
+				loader.setController(new SeeFunctionSeatsMiniRoom(function));
+			}
+			
+			Parent root = loader.load();
+			
+			MAIN_PANE.getChildren().setAll(root);
+			MAIN_PANE.getScene().getWindow().sizeToScene();
+		} catch (NullPointerException e) {
+			
+		}
+    }
 }

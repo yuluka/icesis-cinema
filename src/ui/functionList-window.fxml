@@ -23,12 +23,12 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Button fx:id="BTTN_EDIT" layoutX="800.0" layoutY="175.0" mnemonicParsing="false" onAction="#editFunction" prefHeight="33.0" prefWidth="112.0" text="Editar">
+      <Button fx:id="BTTN_EDIT" layoutX="800.0" layoutY="216.0" mnemonicParsing="false" onAction="#editFunction" prefHeight="33.0" prefWidth="112.0" text="Editar">
          <font>
             <Font name="Arial Italic" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="BTTN_DELETE" layoutX="800.0" layoutY="229.0" mnemonicParsing="false" onAction="#removeFunction" prefHeight="33.0" prefWidth="112.0" text="Eliminar">
+      <Button fx:id="BTTN_DELETE" layoutX="800.0" layoutY="270.0" mnemonicParsing="false" onAction="#removeFunction" prefHeight="33.0" prefWidth="112.0" text="Eliminar">
          <font>
             <Font name="Arial Italic" size="18.0" />
          </font>
@@ -48,5 +48,10 @@
             <Font name="Arial Bold" size="22.0" />
          </font>
       </Label>
+      <Button fx:id="BTTN_SEATS" layoutX="800.0" layoutY="162.0" mnemonicParsing="false" onAction="#seeFunctionSeats" prefHeight="33.0" prefWidth="112.0" text="Ver sillas">
+         <font>
+            <Font name="Arial Italic" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

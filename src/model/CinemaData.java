@@ -24,15 +24,12 @@ public class CinemaData {
 		
 	private static User adminUser = new User("Admin", "123");//Usuario administrador.
 	
-	public CinemaData() {
-		
-	}
 	
 	/**Recibe los datos del user que se quiere registrar y revisa si el Array con todos los users 
 	está vacío. En caso de que sí, agrega el user sin más. En caso de que no, revisa si existe un 
 	user con el mismo id del que se está intentando crear y lo agrega, si no lo encuentra, o lanza 
 	una excepción, si no lo encuentra*/
-	public void registerUser(String name, String id) throws AlreadyExistingUserException, NoInfoRegisterUserException{
+	public static void registerUser(String name, String id) throws AlreadyExistingUserException, NoInfoRegisterUserException{
 		User newUser = new User(name, id);
 		
 		if(name.equals("") || id.equals("")) {
@@ -55,7 +52,7 @@ public class CinemaData {
 	
 	/** Busca si hay algún user con el id ingresado y devuelve un boolean para decir si lo hizo 
 	o no.*/
-	public boolean searchUser(String id) throws NonExistingUserException, NoInfoLoginUserException{
+	public static boolean searchUser(String id) throws NonExistingUserException, NoInfoLoginUserException{
 		boolean found = false;
 
 		if(id.equals("")) {
@@ -79,7 +76,7 @@ public class CinemaData {
 		return found;
 	}
 	
-	public int searchUserToReplace(User editUser) {
+	public static int searchUserToReplace(User editUser) {
 		int index = 0;
 		
 		for (int i = 0; i < users.size(); i++) {
@@ -92,7 +89,7 @@ public class CinemaData {
 		return index;
 	}
 	
-	public void addFunction(String dateStr, String hour, String filmName, double filmDuration, int room) throws ParseException {
+	public static void addFunction(String dateStr, String hour, String filmName, double filmDuration, int room) throws ParseException {
 		Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateStr);
 		Function newFunction = new Function(date, hour, filmName, filmDuration, room);
 	
@@ -111,7 +108,7 @@ public class CinemaData {
 		}
 	}
 	
-	public boolean searchFunction(String filmName, String dateStr, String hour) {
+	public static boolean searchFunction(String filmName, String dateStr, String hour) {
 		boolean found = false;
 		
 		for (int i = 0; i < functionsHistorial.size(); i++) {
@@ -125,7 +122,7 @@ public class CinemaData {
 		return found;
 	}
 	
-	public boolean searchFunctionByRoom(String dateStr, int room, String hour) {
+	public static boolean searchFunctionByRoom(String dateStr, int room, String hour) {
 		boolean found = false;
 		
 		for (int i = 0; i < functionsHistorial.size(); i++) {
@@ -139,7 +136,19 @@ public class CinemaData {
 		return found;
 	}
 	
-	public void removeFunction(Function functionToRemove) {
+	public static Function searchFunction(Function function) {
+		for (int i = 0; i < functions.size(); i++) {
+			if(functions.get(i).getRoom() == function.getRoom() && functions.get(i).getDate().equals(function.getDate()) &&
+					functions.get(i).getHour().equalsIgnoreCase(function.getHour())) {
+				function = functions.get(i);
+				break;
+			}
+		}		
+		
+		return function;
+	}
+	
+	public static void removeFunction(Function functionToRemove) {
 		for (int i = 0; i < functions.size(); i++) {
 			if(functions.get(i).equals(functionToRemove)) {
 				functions.remove(i);
@@ -161,7 +170,7 @@ public class CinemaData {
 		return index;
 	}
 	
-	public boolean compareDates(Date functionDate) {
+	public static boolean compareDates(Date functionDate) {
 		boolean pastDate = false;
 		
 		Date now = new Date();
@@ -175,13 +184,13 @@ public class CinemaData {
 		return pastDate;
 	}
 	
-	public void removePastFunctions(Function function) {
+	public static void removePastFunctions(Function function) {
 		if(compareDates(function.getDate())) {
 			removeFunction(function);
 		}
 	}
 	
-	public void addViewer(String name, String id) {
+	public static void addViewer(String name, String id) {
 		if(name.isEmpty() || id.isEmpty()) {
 			throw new NoInfoAddViewerException();
 		}else {
@@ -191,10 +200,30 @@ public class CinemaData {
 		}
 	}
 	
-	public void removeViewer(Viewer viewerToRemove) {
-		for (int i = 0; i < viewers.size(); i++) {
-			if(viewers.get(i).equals(viewerToRemove)) {
-				viewers.remove(i);
+	public static void removeViewer(Viewer viewerToRemove) {
+		boolean aux = false;
+		
+		for (int i = 0; i < functions.size() && !aux; i++) {
+			for (int j = 0; j < functions.get(i).getRoomA().getSeats().size() && !aux; j++) {
+				
+				if(functions.get(i).getRoomA().getSeats().get(j).isOccupied()) {
+					Viewer viewern = functions.get(i).getRoomA().getSeats().get(j).getViewer();
+					
+					if(viewern.getId().equalsIgnoreCase(viewerToRemove.getId()) && 
+							viewern.getName().equalsIgnoreCase(viewerToRemove.getName())) {
+						
+						functions.get(i).getRoomA().getSeats().get(j).setOccupied(false);
+						functions.get(i).getRoomA().getSeats().get(j).setViewer(null);
+						aux = true;					
+					}
+				}
+				
+				/**if(viewern.equals(viewerToRemove)) {
+					functions.get(i).getRoomA().getSeats().get(j).setOccupied(false);
+					functions.get(i).getRoomA().getSeats().get(j).setViewer(null);
+					aux = true;
+				}*/
+				
 			}
 		}
 	}

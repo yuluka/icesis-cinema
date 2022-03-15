@@ -1,9 +1,5 @@
 package control;
 
-import model.CinemaData;
-import model.Function;
-import model.Seat;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -14,18 +10,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
-import model.Viewer;
+import model.CinemaData;
+import model.Function;
+import model.Seat;
 
-public class SelectSeatMiniroom implements Initializable {
-	@FXML
-    private Button BTTN_NEXT;
+public class SeeFunctionSeatsMediumRoom implements Initializable {
+    @FXML
+    private ImageView BTTN_BACK;
 
     @FXML
     private ImageView IMGV_SEAT1;
@@ -91,10 +86,52 @@ public class SelectSeatMiniroom implements Initializable {
     private ImageView IMGV_SEAT28;
 
     @FXML
+    private ImageView IMGV_SEAT29;
+
+    @FXML
     private ImageView IMGV_SEAT3;
 
     @FXML
+    private ImageView IMGV_SEAT30;
+
+    @FXML
+    private ImageView IMGV_SEAT31;
+
+    @FXML
+    private ImageView IMGV_SEAT32;
+
+    @FXML
+    private ImageView IMGV_SEAT33;
+
+    @FXML
+    private ImageView IMGV_SEAT34;
+
+    @FXML
+    private ImageView IMGV_SEAT35;
+
+    @FXML
+    private ImageView IMGV_SEAT36;
+
+    @FXML
+    private ImageView IMGV_SEAT37;
+
+    @FXML
+    private ImageView IMGV_SEAT38;
+
+    @FXML
+    private ImageView IMGV_SEAT39;
+
+    @FXML
     private ImageView IMGV_SEAT4;
+
+    @FXML
+    private ImageView IMGV_SEAT40;
+
+    @FXML
+    private ImageView IMGV_SEAT41;
+
+    @FXML
+    private ImageView IMGV_SEAT42;
 
     @FXML
     private ImageView IMGV_SEAT5;
@@ -113,66 +150,36 @@ public class SelectSeatMiniroom implements Initializable {
 
     @FXML
     private AnchorPane MAIN_PANE;
-    
-    private Viewer newViewer;
-    private Function newFunction;
+
+    private Function selectedFunction;
     private ArrayList<ImageView> seatsImages;
     private ArrayList<Seat> functionSeats;
     
-    public SelectSeatMiniroom(Viewer newViewer, Function newFunction) {
-		this.newViewer = newViewer;
-		this.newFunction = newFunction;
-	}
-   
-    public void saveViewerSelections(ImageView imgV) throws IOException {
-    	String[] parts = imgV.getId().split("T");
-    	int numSelection = Integer.parseInt(parts[1]);
-    	
-    	for (int i = 0; i < functionSeats.size(); i++) {
-			if(functionSeats.get(i).getNumber() == numSelection) {
-				functionSeats.get(i).setOccupied(true);
-				functionSeats.get(i).setViewer(newViewer);
-			}
-		}
-    	
-    	goToMainWindow();
+    public SeeFunctionSeatsMediumRoom(Function selectedFunction) {
+    	this.selectedFunction = selectedFunction;
     }
-    
-    public void goToMainWindow() throws IOException {
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/main-window.fxml"));
-		loader.setController(new MainWindow());
-		Parent root = loader.load();
-		
-		Stage stage = new Stage();
-		Scene sc = new Scene(root);
-		stage.setScene(sc);
-		stage.show();
-		
-		Stage aux = (Stage) IMGV_SEAT1.getScene().getWindow();
-		aux.close();
-	}
-    
-    @FXML
-    void selectSeat(MouseEvent event) throws IOException {
-    	ImageView imgV = (ImageView) event.getSource();
-    	File f = new File("images/blue circle.png");
-    	Image img = new Image(f.toURI().toString());
-    	imgV.setImage(img);
+
+	@FXML
+    void back(MouseEvent event) throws IOException {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/functionList-window.fxml"));
+    	loader.setController(new FunctionList());
+    	Parent root = loader.load();
     	
-    	saveViewerSelections(imgV);
+    	MAIN_PANE.getChildren().setAll(root);
+    	MAIN_PANE.getScene().getWindow().sizeToScene();
     }
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		newFunction = CinemaData.searchFunction(newFunction);
+		selectedFunction = CinemaData.searchFunction(selectedFunction);
 		
-		functionSeats = newFunction.getRoomA().getSeats();
+		functionSeats = selectedFunction.getRoomA().getSeats();
 		fillSeatsImages();
 		
 		for (int i = 0; i < functionSeats.size(); i++) {
 			if(functionSeats.get(i).isOccupied()) {
 				int seatNumber = functionSeats.get(i).getNumber();
-				
+			
 				String[] parts = seatsImages.get(i).getId().split("T");
 				int numAux = Integer.parseInt(parts[1]);
 				
@@ -216,5 +223,19 @@ public class SelectSeatMiniroom implements Initializable {
 		seatsImages.add(IMGV_SEAT26);
 		seatsImages.add(IMGV_SEAT27);
 		seatsImages.add(IMGV_SEAT28);
+		seatsImages.add(IMGV_SEAT29);
+		seatsImages.add(IMGV_SEAT30);
+		seatsImages.add(IMGV_SEAT31);
+		seatsImages.add(IMGV_SEAT32);
+		seatsImages.add(IMGV_SEAT33);
+		seatsImages.add(IMGV_SEAT34);
+		seatsImages.add(IMGV_SEAT35);
+		seatsImages.add(IMGV_SEAT36);
+		seatsImages.add(IMGV_SEAT37);
+		seatsImages.add(IMGV_SEAT38);
+		seatsImages.add(IMGV_SEAT39);
+		seatsImages.add(IMGV_SEAT40);
+		seatsImages.add(IMGV_SEAT41);
+		seatsImages.add(IMGV_SEAT42);
 	}
 }

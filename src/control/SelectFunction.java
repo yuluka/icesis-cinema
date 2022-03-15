@@ -63,10 +63,10 @@ public class SelectFunction implements Initializable {
     		
     		if(selectedFunction.getRoom() == 1) {
         		loader = new FXMLLoader(getClass().getResource("../ui/selectSeatMediumroom-window.fxml"));
-        		loader.setController(new SelectSeatMediumroom(newViewer));
+        		loader.setController(new SelectSeatMediumroom(newViewer,selectedFunction));
     		}else {
     			loader = new FXMLLoader(getClass().getResource("../ui/selectSeatMiniroom-window.fxml"));
-        		loader.setController(new SelectSeatMiniroom(newViewer));
+        		loader.setController(new SelectSeatMiniroom(newViewer,selectedFunction));
         	}
     		
     		Parent root = loader.load();
@@ -90,6 +90,7 @@ public class SelectFunction implements Initializable {
 		TVCOLUMN_DURATION.setCellValueFactory(new PropertyValueFactory<Function,Double>("filmDuration"));
 		TVCOLUMN_ROOM.setCellValueFactory(new PropertyValueFactory<Function,String>("roomStr"));
 		TVCOLUMN_DATE.setCellValueFactory(new PropertyValueFactory<Function,String>("dateStr"));
+		TVCOLUMN_HOUR.setCellValueFactory(new PropertyValueFactory<Function,String>("hour"));
 		
 		TV_FUNCTIONS.setItems(functions);
 		

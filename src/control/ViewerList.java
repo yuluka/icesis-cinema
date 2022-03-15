@@ -46,7 +46,8 @@ public class ViewerList implements Initializable {
     void removeViewer(ActionEvent event) {
     	try {
     		CinemaData.viewers.remove(selectedViewer);
-    		updateTVInfo();
+    		updateTVInfo();    		
+    		CinemaData.removeViewer(selectedViewer);
     	}catch (NullPointerException e) {
 			
 		}

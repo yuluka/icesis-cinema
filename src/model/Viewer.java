@@ -25,4 +25,17 @@ public class Viewer {
 	public void setId(String id) {
 		this.id = id;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof Viewer) {
+			Viewer other = (Viewer) obj;
+			return this.id.equals(other.getId());
+		}else {
+			return false;
+		}
+	}
+	
+	
+	
 }
