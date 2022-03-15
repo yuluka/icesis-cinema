@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="MAIN_FUNCTIONS_PANE" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="412.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="BTTN_ADD_FUNCTION" accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="35.0" onMouseClicked="#createFunction" onMouseMoved="#showTooltipFunction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/add%20function%20icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="BTTN_ADD_VIEWER" accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" layoutX="225.0" layoutY="35.0" onMouseClicked="#addViewer" onMouseMoved="#showTooltipViewer" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/add%20spectator%20icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="BTTN_ADD_USER" accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" layoutX="436.0" layoutY="35.0" onMouseClicked="#addUser" onMouseMoved="#showTooltipUser" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/user%20settings%20icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="BTTN_SEE_MINIROOM" accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" layoutX="119.0" layoutY="227.0" onMouseClicked="#seeMiniroom" onMouseMoved="#showTooltipMiniRoom" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/room%20icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="BTTN_SEE_MEDIUMROOM" accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" layoutX="330.0" layoutY="227.0" onMouseClicked="#seeMediumroom" onMouseMoved="#showTooltipMediumRoom" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/room%202%20icon.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

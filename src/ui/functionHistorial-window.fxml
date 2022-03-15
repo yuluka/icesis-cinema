@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="MAIN_PANE" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="TV_FUNCTIONS" layoutY="45.0" prefHeight="388.0" prefWidth="649.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0">
+        <columns>
+          <TableColumn fx:id="TVCOLUMN_NAME" prefWidth="75.0" text="Nombre" />
+          <TableColumn fx:id="TVCOLUMN_DATE" prefWidth="75.0" text="Fecha" />
+            <TableColumn fx:id="TVCOLUMN_HOUR" prefWidth="75.0" text="Hora" />
+            <TableColumn fx:id="TVCOLUMN_DURATION" prefWidth="75.0" text="Duración" />
+            <TableColumn fx:id="TVCOLUMN_ROOM" prefWidth="75.0" text="Sala" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <ImageView fx:id="BTTN_BACK" accessibleRole="BUTTON" fitHeight="56.0" fitWidth="48.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/back%20icon.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="210.0" layoutY="11.0" text="Historial de funciones">
+         <font>
+            <Font name="Arial Bold" size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

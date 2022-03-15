@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <DatePicker fx:id="DP_DATE" layoutX="27.0" layoutY="89.0" prefHeight="36.0" prefWidth="251.0" promptText="Fecha de la función" />
+      <TextField fx:id="TXT_FILM_NAME" layoutX="27.0" layoutY="175.0" promptText="Nombre de la película">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="TXT_HOUR" layoutX="27.0" layoutY="132.0" promptText="Hora (HH:mm 24 horas)">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="TXT_DURATION" layoutX="27.0" layoutY="218.0" promptText="Duración (minutos)">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </TextField>
+      <Button fx:id="BTTN_SAVE_CHANGES" layoutX="70.0" layoutY="274.0" mnemonicParsing="false" onAction="#saveChanges" text="Guardar cambios">
+         <font>
+            <Font name="Arial Italic" size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="55.0" layoutY="23.0" text="Editar información">
+         <font>
+            <Font name="Arial Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="84.0" layoutY="49.0" text="de la función">
+         <font>
+            <Font name="Arial Bold" size="22.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
